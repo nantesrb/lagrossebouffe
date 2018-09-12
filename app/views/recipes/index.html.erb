@@ -1,0 +1,43 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Mangez. Mangez. Manger.</h1>
+    <p class="lead text-muted">Trouvez votre meilleur repas parmis toutes ces <strong><%= Recipe.count %> recettes</strong> sur lagrossebouffe.</p>
+    <p>
+      <%= link_to new_recipe_path, class: "btn btn-primary btn-lg my-2 mr-2" do %>
+        <i class="far fa-edit"></i>
+        Rédiger une recette
+      <% end %>
+    </p>
+  </div>
+</section>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <% @receipts.each do |recipe| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <%# <%= image_tag recipe.image, class: "card-img-top" %>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= recipe.title %>
+              </h5>
+              <p class="card-text">
+                <strong class="txt-primary">
+                  <%= number_to_currency recipe.price %>
+                </strong>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <%= link_to "Voir la recette", recipe, class: "btn btn-sm btn-outline-secondary" %>
+                </div>
+                <small class="text-muted">
+                  <%= l recipe.created_at, format: "%d/%m/%Y à %Hh%M" %>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

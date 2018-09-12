@@ -32,15 +32,14 @@ private
 
   def recipe_params
     params.require(:recipe).permit(
-      :title
-      :time
-      :description
-      :difficulty
-      :ingredient
-      :rice
+      :title,
+      :time,
+      :description,
+      :difficulty,
+      :ingredient,
+      :price,
       :image
     )
   end
 
-end
 end
