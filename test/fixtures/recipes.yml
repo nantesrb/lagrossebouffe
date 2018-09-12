@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  time: 1
+  description: MyString
+  difficulty: 1
+  ingredient: MyString
+  price: 1
+
+two:
+  title: MyString
+  time: 1
+  description: MyString
+  difficulty: 1
+  ingredient: MyString
+  price: 1
