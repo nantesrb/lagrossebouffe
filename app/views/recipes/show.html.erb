@@ -1,0 +1,27 @@
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <%= image_tag @recipe.image, class: "img-fluid" %>
+        <h1 class="mt-5">
+          <%= @recipe.title %>
+        </h1>
+        <h3 class="txt-primary">
+          <%= number_to_currency @recipe.price %>
+        </h3>
+        <h3 class="txt-primary">
+          <%= number_to_currency @recipe.time %>
+        </h3>
+        <h3 class="txt-primary">
+          <%= number_to_currency @recipe.difficulty %>
+        </h3>
+        <small class="text-muted">
+          <%= l @recipe.created_at, format: "%d/%m/%Y à %Hh%M" %>
+        </small>
+        <p class="mt-3">
+          <%= @recipe.description %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
