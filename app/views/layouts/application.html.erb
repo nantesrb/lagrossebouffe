@@ -16,37 +16,16 @@
   </head>
   <body>
     <header>
-      <div class="collapse bg-rg" id="navbarHeader">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-md-7 py-4">
-              <h4 class="text-white">À propos</h4>
-              <p class="text-muted">
-                <strong>lagrossebouffe</strong>, ou comment faire un régime express&nbsp;!
-              </p>
-            </div>
-            <div class="col-sm-4 offset-md-1 py-4">
-              <h4 class="text-white">Contact</h4>
-              <ul class="list-unstyled">
-                <li><a href="#" class="text-white">Nous suivre sur Twitter</a></li>
-                <li><a href="#" class="text-white">Notre page Facebook</a></li>
-                <li><a href="#" class="text-white">Écrivez-nous !</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="navbar navbar-dark bg-rg shadow-sm">
-        <div class="container d-flex justify-content-between">
-          <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
-            <i class="mr-2 fa fa-map-marker-alt"></i>
-            <strong>lagrossebouffe</strong>
-          <% end %>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </div>
+      <nav class="navbar navbar-dark bg-dark sticky-top">
+        <%= link_to recipes_path, class: "navbar-brand" do %>
+          <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+          RailsGirls
+        <% end %>
+        <%= link_to new_recipe_path, class: "btn btn-outline-success my-2 my-sm-0" do %>
+          <i class="far fa-edit"></i>
+          Rédiger une recette
+        <% end %>
+      </nav>
     </header>
     <main role="main">
       <%= yield %>

@@ -1,13 +1,7 @@
 <section class="jumbotron text-center">
   <div class="container">
-    <h1 class="jumbotron-heading">Mangez. Mangez. Manger.</h1>
+    <h1 class="jumbotron-heading">Mangez, mangez, manger!!!</h1>
     <p class="lead text-muted">Trouvez votre meilleur repas parmis toutes ces <strong><%= Recipe.count %> recettes</strong> sur lagrossebouffe.</p>
-    <p>
-      <%= link_to new_recipe_path, class: "btn btn-primary btn-lg my-2 mr-2" do %>
-        <i class="far fa-edit"></i>
-        Rédiger une recette
-      <% end %>
-    </p>
   </div>
 </section>
 <div class="album py-5 bg-light">
@@ -22,16 +16,25 @@
                 <%= recipe.title %>
               </h5>
               <p class="card-text">
-                <strong class="txt-primary">
-                  <%= number_to_currency recipe.price %>
-                </strong>
+                <div>
+                  <i class="fa fa-fw fa-euro-sign"></i>
+                  <%= recipe.price %>
+                </div>
+                <div>
+                  <i class="fa fa-fw fa-clock"></i>
+                  <%= recipe.time %> min
+                </div>
+                <div>
+                  <i class="fa fa-fw fa-star"></i>
+                  <%= recipe.difficulty %>
+                </div>
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <%= link_to "Voir la recette", recipe, class: "btn btn-sm btn-outline-secondary" %>
                 </div>
                 <small class="text-muted">
-                  <%= l recipe.created_at, format: "%d/%m/%Y à %Hh%M" %>
+                  <%= l recipe.created_at, format: "%d/%m/%Y" %>
                 </small>
               </div>
             </div>

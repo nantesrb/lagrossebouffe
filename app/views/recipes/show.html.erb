@@ -6,21 +6,27 @@
         <h1 class="mt-5">
           <%= @recipe.title %>
         </h1>
-        <h3 class="txt-primary">
-          <%= number_to_currency @recipe.price %>
-        </h3>
-        <h3 class="txt-primary">
-          <%= number_to_currency @recipe.time %>
-        </h3>
-        <h3 class="txt-primary">
-          <%= number_to_currency @recipe.difficulty %>
-        </h3>
-        <small class="text-muted">
-          <%= l @recipe.created_at, format: "%d/%m/%Y à %Hh%M" %>
-        </small>
+        <div>
+          <i class="fa fa-fw fa-euro-sign"></i>
+          <%= @recipe.price %>
+        </div>
+        <div>
+          <i class="fa fa-fw fa-clock"></i>
+          <%= @recipe.time %> min
+        </div>
+        <div>
+          <i class="fa fa-fw fa-star"></i>
+          <%= @recipe.difficulty %>
+        </div>
         <p class="mt-3">
           <%= @recipe.description %>
         </p>
+        <p class="mt-3">
+          <%= @recipe.ingredient %>
+        </p>
+        <small class="text-muted">
+          <%= l @recipe.created_at, format: "%d/%m/%Y à %Hh%M" %>
+        </small>
         <p>
           <%= link_to edit_recipe_path, class: "btn btn-primary btn-lg my-2 mr-2" do %>
             <i class="far fa-edit"></i>
