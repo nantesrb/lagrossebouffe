@@ -18,20 +18,20 @@
             <div class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text">
-                  <i class="far fa-fw fa-user"></i>
+                  <i class="far fa-fw fa-edit"></i>
                 </div>
               </div>
-              <%= form.text_field :description, class: "form-control form-control-lg", placeholder: "Ecrivez ici votre recette" %>
+              <%= form.text_area :description, class: "form-control form-control-lg", placeholder: "Ecrivez ici votre recette" %>
             </div>
           </div>
           <div class="form-group mb-4">
             <div class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text">
-                  <i class="far fa-fw fa-envelope"></i>
+                  <i class="far fa-fw fa-edit"></i>
                 </div>
               </div>
-              <%= form.text_field :ingredient, class: "form-control form-control-lg", placeholder: "Les ingrédients que vous avez utilisé" %>
+              <%= form.text_area :ingredient, class: "form-control form-control-lg", placeholder: "Les ingrédients que vous avez utilisé" %>
             </div>
           </div>
           <div class="form-group mb-4">
@@ -48,20 +48,20 @@
             <div class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text">
-                  <i class="fa fa-fw fa-euro-sign"></i>
+                  <i class="fa fa-fw fa-star"></i>
                 </div>
               </div>
-              <%= form.number_field :difficulty, class: "form-control form-control-lg", placeholder: "Entre 1 et 3" %>
+              <%= form.number_field :difficulty, class: "form-control form-control-lg", placeholder: "Difficulté entre 1 et 3" %>
             </div>
           </div>
           <div class="form-group mb-4">
             <div class="input-group">
               <div class="input-group-prepend">
                 <div class="input-group-text">
-                  <i class="fa fa-fw fa-euro-sign"></i>
+                  <i class="fa fa-fw fa-clock"></i>
                 </div>
               </div>
-              <%= form.number_field :time, class: "form-control form-control-lg", placeholder: "temps moyen pour réaliser cette recette" %>
+              <%= form.number_field :time, class: "form-control form-control-lg", placeholder: "Temps moyen pour réaliser cette recette" %>
             </div>
           </div>
           <div class="form-group mb-4">
@@ -70,7 +70,7 @@
               <%= form.label :image, "Choisir une image", class: "custom-file-label" %>
             </div>
           </div>
-          <%= form.submit "Publier la recette", class: "btn btn-lg btn-primary" %>
+          <%= form.submit "Enregistrer votre recette", class: "btn btn-lg b btn-success" %>
         <% end %>
       </div>
     </div>
