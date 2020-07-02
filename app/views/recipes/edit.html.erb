@@ -1,92 +1,15 @@
-<div class="py-5">
-  <div class="container">
-    <h1>Mettre à jour une recette</h1>
-    <div class="row mt-5">
-      <div class="col-md-8">
-        <%= form_with model: @recipe do |form| %>
-          <div class="form-group mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="far fa-fw fa-edit"></i>
-                </div>
-              </div>
-              <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "Titre de votre recette" %>
-            </div>
-          </div>
-          <div class="form-group mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="far fa-fw fa-edit"></i>
-                </div>
-              </div>
-              <%= form.text_area :description, class: "form-control form-control-lg", placeholder: "Ecrivez ici votre recette" %>
-            </div>
-          </div>
-          <div class="form-group mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="far fa-fw fa-edit"></i>
-                </div>
-              </div>
-              <%= form.text_area :ingredient, class: "form-control form-control-lg", placeholder: "Les ingrédients que vous avez utilisé" %>
-            </div>
-          </div>
-          <div class="form-group mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="fa fa-fw fa-euro-sign"></i>
-                </div>
-              </div>
-              <%= form.number_field :price, class: "form-control form-control-lg", placeholder: "Prix moyen de cette recette" %>
-            </div>
-          </div>
-          <div class="form-group mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="fa fa-fw fa-star"></i>
-                </div>
-              </div>
-              <%= form.number_field :difficulty, class: "form-control form-control-lg", placeholder: "Difficulté entre 1 et 3" %>
-            </div>
-          </div>
-          <div class="form-group mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="fa fa-fw fa-clock"></i>
-                </div>
-              </div>
-              <%= form.number_field :time, class: "form-control form-control-lg", placeholder: "Temps moyen pour réaliser cette recette" %>
-            </div>
-          </div>
-          <div class="form-group mb-4">
-            <div class="custom-file">
-              <%= form.file_field :image, class: "custom-file-input form-control-lg", placeholder: "Image", lang: "fr" %>
-              <%= form.label :image, "Choisir une image", class: "custom-file-label" %>
-            </div>
-          </div>
-          <%= form.submit "Mettre à jour la recette", class: "btn btn-lg b btn-success" %>
-          <%= link_to "Delete", recipe_path(@recipe),
-            method: :delete,
-            data: { confirm: "Etes vous sûr?" },
-            class: "btn btn-lg btn-danger" %>
-        <% end %>
-      </div>
-      <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <%= image_tag @recipe.image, class: "card-img-top" %>
-          <div class="card-body">
-            <h5 class="card-title">
-              Image actuelle
-            </h5>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= form_with model: @recipe do |form| %>
+  <%= form.text_field :title, placeholder: "Titre de votre recette" %>
+  <%= form.text_area :description, placeholder: "Ecrivez ici votre recette" %>
+  <%= form.text_area :ingredient, placeholder: "Les ingrédients que vous avez utilisé" %>
+  <%= form.number_field :price, placeholder: "Prix moyen de cette recette" %>
+  <%= form.number_field :difficulty, placeholder: "Difficulté entre 1 et 3" %>
+  <%= form.number_field :time, placeholder: "Temps moyen pour réaliser cette recette" %>
+  <%= form.file_field :image, placeholder: "Image", lang: "fr" %>
+  <%= form.label :image, "Choisir une image" %>
+  <%= form.submit "Mettre à jour la recette" %>
+  <%= link_to "Delete", recipe_path(@recipe),
+    method: :delete,
+    data: { confirm: "Etes vous sûr?" } %>
+<% end %>
+<%= image_tag @recipe.image %>

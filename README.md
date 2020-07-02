@@ -1,6 +1,6 @@
 # README
 
-This README will explain how to create your own Marmiton app copycat
+This README will explain how to create your own Marmiton app copycat :
 
 * rails new lagrossebouffe
 
