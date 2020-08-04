@@ -1,9 +1,46 @@
-<% @receipts.each do |recipe| %>
-  <%= image_tag recipe.image %>
-  <%= recipe.title %>
-  <%= recipe.price %>
-  <%= recipe.time %> min
-  <%= recipe.difficulty %>
-  <%= link_to "Voir la recette", recipe %>
-  <%= l recipe.created_at, format: "%d/%m/%Y" %>
-<% end %>
+ <section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Mangez, mangez, mangez!!!</h1>
+    <p class="lead text-muted">Trouvez votre meilleur repas parmis ces <strong><%= Recipe.count %> recettes</strong> sur lagrossebouffe.</p>
+  </div>
+</section>
+<div class="album py-5">
+  <div class="container">
+    <div class="row">
+      <% @receipts.each do |recipe| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <%= image_tag recipe.image, class: "card-img-top" %>
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= recipe.title %>
+              </h5>
+              <p class="card-text">
+                <div>
+                  <i class="fa fa-fw fa-euro-sign"></i>
+                  <%= recipe.price %>
+                </div>
+                <div>
+                  <i class="fa fa-fw fa-clock"></i>
+                  <%= recipe.time %> min
+                </div>
+                <div>
+                  <i class="fa fa-fw fa-star"></i>
+                  <%= recipe.difficulty %>
+                </div>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <%= link_to "Voir la recette", recipe, class: "btn btn-sm btn-outline-secondary" %>
+                </div>
+                <small class="text-muted">
+                  <%= l recipe.created_at, format: "%d/%m/%Y" %>
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
