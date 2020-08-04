@@ -16,12 +16,11 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-dark bg-dark sticky-top">
+      <nav class="navbar navbar-dark bg-primary sticky-top">
         <%= link_to recipes_path, class: "navbar-brand" do %>
-          <img src="/app/assets/images/favicon.png" width="30" height="30" class="d-inline-block align-top" alt="">
           RailsGirls
         <% end %>
-        <%= link_to new_recipe_path, class: "btn btn-outline-success my-2 my-sm-0" do %>
+        <%= link_to new_recipe_path, class: "btn btn-secondary my-2 my-sm-0" do %>
           <i class="far fa-edit"></i>
           Rédiger une recette
       <% end %>
