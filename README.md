@@ -55,7 +55,7 @@ Voici la ligne de commande pour demander à Rails de créer l'application&nbsp;:
 💻
 
 ```sh
-rails new lagrossebouffe
+rails new lagrossebouffe -T -C --skip-bootsnap --skip-webpack-install
 ```
 
 Rails va générer un dossier avec tous les fichiers nécessaires à l'application.
@@ -167,7 +167,7 @@ Nous pouvons le créer grâce à la commande&nbsp;:
 💻
 
 ```sh
-rails generate model Recipe title:string time:integer description:string difficulty:integer ingredient:string price:integer
+rails generate model recipe title:string time:integer description:string difficulty:integer ingredient:string price:integer
 ```
 
 Nous avons deux nouveaux fichiers : **app/models/recipe.rb** et **db/migrate/20180912121554_create_recipes.rb** ce dernier va permettre d'ajouter à la base de données une table `recipes` grâce à la commande&nbsp;:
